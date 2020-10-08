@@ -6,3 +6,4 @@ icon_menu.addEventListener("click", function (e) {
     let menu_body = document.querySelector('.menu__body');
     menu_body.classList.toggle('menu__body_active')
 });
+// slick-slider ================================================

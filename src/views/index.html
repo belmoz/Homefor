@@ -25,6 +25,7 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
 	<link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
 	<link rel="stylesheet" href="styles/main.css">
+
 </head>
 
 <body>
@@ -34,8 +35,18 @@
 			<div class="main__container container">
 				<div class="main-slider slider">
 					<div class="main-slider__item">
-						<h1 class="main-slider__title">Жилой комплекс HOMEFOR&nbsp&nbsp- это жизнь с комфортом</h1>
+						<h1 class="main-slider__title">Жилой комплекс HOMEFOR&nbsp&nbsp-<br>это жизнь с комфортом</h1>
 						<div class="main-slider__description">Мы охватываем все важные этапы проектирования и строительство дома, а также повседневная эксплуатация после окончания строительства.</div>
+						<button class="main-slider__btn">Подробнее</button>
+					</div>
+					<div class="main-slider__item">
+						<h1 class="main-slider__title">Жилой комплекс HOMEFOR&nbsp&nbsp-<br>это многофункциональность</h1>
+						<div class="main-slider__description"> В составе комплекса реализуется не только жилой фонд, но и социальный – на территории ЖК функционируют бизнес и торгово-развлекательный центры, школа и другие важные для района объекты.</div>
+						<button class="main-slider__btn">Подробнее</button>
+					</div>
+					<div class="main-slider__item">
+						<h1 class="main-slider__title">Жилой комплекс HOMEFOR&nbsp&nbsp-<br>высокое качество жилья</h1>
+						<div class="main-slider__description">Возможность жить, работать и отдыхать, не выезжая за пределы микрорайона. Это самостоятельное городское пространство с высоким уровнем комфорта.</div>
 						<button class="main-slider__btn">Подробнее</button>
 					</div>
 				</div>
@@ -49,9 +60,27 @@
 		</section>
 		@@include("../blocks/modules/footer/footer.html")
 	</div>
+
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script type="text/javascript" src="slick/slick.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('.slider').slick({
+				dots: true,
+				infinite: true,
+				speed: 300,
+				fade: true,
+				centerMode: true,
+				cssEase: 'linear',
+				draggable: true,
+				slidesToShow: 1,
+				adaptiveHeight: true,
+				autoplay: true,
+			});
+		});
+
+	</script>
 	<script src="js/main.js"></script>
 	<script src="js/vendor.js"></script>
 </body>

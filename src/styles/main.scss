@@ -49,24 +49,31 @@ body {
 			object-position: center;
 		}
 	}
+	&__container {
+		height: 100%;
+	}
 }
-.container {
-}
+
 .main-slider {
-	position: relative;
-	z-index: 2;
+	// position: relative;
+	// z-index: 2;
 	min-height: 520px;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
+	// flex-direction: column;
 	padding: 38px 0 0;
+
 	// .main-slider__item
 	&__item {
 		color: $white;
 		text-align: center;
-		max-width: 60%;
+		max-width: 840px;
+		margin: 0 auto;
+		// @media (max-width: $md2) {
+		// 	max-width: 785px;
+		// }
 	}
 	// .main-slider__title
 	&__title {
@@ -74,6 +81,21 @@ body {
 		font-weight: 700;
 		line-height: 70px;
 		margin-bottom: 35px;
+		user-select: none;
+		@media (max-width: $md2) {
+			font-size: 50px;
+			line-height: 60px;
+		}
+		@media (max-width: $md3) {
+			font-size: 25px;
+			line-height: 40px;
+			margin-bottom: 30px;
+		}
+		@media (max-width: $md4) {
+			font-size: 20px;
+			line-height: 30px;
+			margin-bottom: 12px;
+		}
 	}
 	// .main-slider__description
 	&__description {
@@ -81,6 +103,17 @@ body {
 		line-height: 24px;
 		max-width: 65%;
 		margin: 0 auto 40px;
+		user-select: none;
+		@media (max-width: $md3) {
+			font-size: 14px;
+			line-height: 21px;
+			margin: 0 auto 40px;
+		}
+		@media (max-width: $md4) {
+			font-size: 12px;
+			line-height: 18px;
+			max-width: 80%;
+		}
 	}
 	// .main-slider__btn
 	&__btn {
@@ -97,7 +130,51 @@ body {
 		&:hover {
 			color: $hover;
 		}
+		@media (max-width: $md4) {
+			line-height: 50px;
+			padding: 0 30px;
+			font-size: 14px;
+		}
 	}
 }
-.slider {
+.slick-slider {
+	position: relative;
+	.slick-track,
+	.slick-list {
+	}
+	.slick-list {
+		overflow: hidden;
+	}
+	.slick-track {
+		display: flex;
+		align-items: flex-start;
+	}
+	.slick-slide {
+	}
+	.slick-dots {
+		// padding: 100px 0px 0px 0px;
+		display: flex;
+		position: absolute;
+		bottom: 40px;
+		left: 50%;
+		transform: translate(-50%, 0);
+		z-index: 5;
+		// justify-content: center;
+		// align-items: center;
+
+		li {
+			margin: 0 7px;
+			button {
+				font-size: 0;
+				width: 8px;
+				height: 8px;
+				background-color: rgba(#fff, 0.4);
+			}
+			&.slick-active {
+				button {
+					background-color: rgba(#fff, 1);
+				}
+			}
+		}
+	}
 }
