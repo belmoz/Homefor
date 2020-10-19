@@ -4,17 +4,21 @@ $hover: #827686;
 $bg: #e0dce2;
 $fontfamily: "Roboto", sans-serif;
 //===============================================
+$minWidth: 320;
 $maxWidth: 1920;
-$cnt-width: 1430;
+$maxWidthContainer: 1430;
 $md1: 1200px;
 $md2: 1024px;
 $md3: 860px;
 $md4: 425px;
 //================================================
+//================================================
 .slick-slider {
 	position: relative;
 	.slick-track,
 	.slick-list {
+		position: relative;
+		z-index: 1;
 	}
 	.slick-list {
 		overflow: hidden;
@@ -32,17 +36,26 @@ $md4: 425px;
 		bottom: 40px;
 		left: 50%;
 		transform: translate(-50%, 0);
-		z-index: 5;
+		z-index: 10;
 		// justify-content: center;
 		// align-items: center;
-
+		@media (max-width: $md4) {
+			bottom: 20px;
+		}
 		li {
 			margin: 0 7px;
+			@media (max-width: $md4) {
+				margin: 0 5px;
+			}
 			button {
 				font-size: 0;
 				width: 8px;
 				height: 8px;
 				background-color: rgba(#fff, 0.4);
+				@media (max-width: $md4) {
+					width: 6px;
+					height: 6px;
+				}
 			}
 			&.slick-active {
 				button {
@@ -57,6 +70,9 @@ $md4: 425px;
 	text-align: center;
 	max-width: 670px;
 	margin: 0 auto 85px;
+	@media (max-width: 650px) {
+		margin-bottom: 40px;
+	}
 	// .title-header__title
 	&__title {
 		color: $black;
@@ -64,6 +80,16 @@ $md4: 425px;
 		font-weight: 700;
 		line-height: 60px;
 		margin: 0 0 34px;
+		@media (max-width: $maxWidthContainer + px) {
+			$maxFont: 40;
+			$minFont: 20;
+			$maxLHeight: 60;
+			$minLHeight: 30;
+			$maxMargin: 35;
+			$minMargin: 15;
+			@include adaptFontSize($maxFont, $minFont, $maxLHeight, $minLHeight);
+			@include adaptMargin($maxMargin, $minMargin);
+		}
 	}
 	// .title-header__description
 	&__description {
@@ -71,12 +97,20 @@ $md4: 425px;
 		font-size: 16px;
 		font-weight: 400;
 		line-height: 24px;
+		@media (max-width: $maxWidthContainer + px) {
+			$maxFont: 16;
+			$minFont: 12;
+			$maxLHeight: 24;
+			$minLHeight: 18;
+			$maxMargin: 85;
+			$minMargin: 40;
+			@include adaptFontSize($maxFont, $minFont, $maxLHeight, $minLHeight);
+			@include adaptMargin($maxMargin, $minMargin);
+		}
 	}
 }
 // =====================================================
 .product {
-	// width: 463px;
-	height: 545px;
 	border: 1px solid $black;
 	display: flex;
 	flex: 1 1 100%;
@@ -89,22 +123,38 @@ $md4: 425px;
 	&__column {
 		position: relative;
 		&:first-child {
-			min-height: 76.15%;
-			.product__item {
-				display: flex;
-				align-items: flex-end;
-				justify-content: space-between;
-				width: 100%;
-				height: 100%;
-				padding: 0 29px 44px;
+			height: 415px;
+			@media (max-width: $md4) {
+				height: 258px;
 			}
 		}
-		&:last-child {
+	}
+	// .product__item
+	&__item {
+		width: 100%;
+		height: 100%;
+		&_top {
+			display: flex;
+			align-items: flex-end;
+			justify-content: space-between;
+			padding: 0 29px 44px;
+			.product__text {
+				@media (max-width: $md4) {
+					display: none;
+				}
+			}
+		}
+		&_bottom {
+			width: 100%;
 			height: 100%;
-			.product__item {
-				width: 100%;
-				height: 100%;
-				padding: 29px 29px;
+			padding: 29px 29px;
+			@media (max-width: $md4) {
+				padding: 20px 15px 30px;
+			}
+			.product__text {
+				@media (min-width: $md4) {
+					display: none;
+				}
 			}
 		}
 	}
@@ -128,18 +178,34 @@ $md4: 425px;
 		position: relative;
 		z-index: 3;
 		color: $white;
+		@media (max-width: $md4) {
+			color: $black;
+			margin: 0px 0px 19px 0px;
+		}
 	}
 	// .product__title
 	&__title {
 		font-size: 30px;
 		font-weight: 700;
-		line-height: 60px;
+		line-height: 40px;
+		margin: 0px 0px 5px 0px;
+		@media (max-width: $md4) {
+			font-size: 18px;
+			line-height: 18px;
+			margin: 0px 0px 9px 0px;
+		}
 	}
 	// .product__description
 	&__description {
 		font-size: 16px;
 		font-weight: 400;
 		line-height: 24px;
+		margin: 0px 15px 0px 0px;
+		@media (max-width: $md4) {
+			font-size: 12px;
+			line-height: 12px;
+			margin: 0px;
+		}
 	}
 	// .product__like
 	&__like {
@@ -148,6 +214,11 @@ $md4: 425px;
 		position: relative;
 		z-index: 2;
 		cursor: pointer;
+		@media (max-width: $md4) {
+			display: none;
+			width: 22px;
+			height: 19px;
+		}
 		&:hover {
 			&:before {
 				background-color: $hover;
@@ -162,15 +233,21 @@ $md4: 425px;
 			height: 100%;
 			background-color: $black;
 			transition: all 0.3s ease 0s;
+			@media (max-width: $md4) {
+				display: none;
+			}
 		}
 		&:after {
-			content: url("../../img/icons/heart.png");
+			content: "";
+			background: url("../../img/icons/heart.png") center no-repeat;
 			position: absolute;
-			bottom: 50%;
-			right: 50%;
-			transform: translate(50%, 50%);
-			width: 18px;
-			height: 15px;
+			background-size: 18px 15px;
+			width: 100%;
+			height: 100%;
+			@media (max-width: $md4) {
+				background: url("../../img/icons/heart-black.png") center no-repeat;
+				background-size: 22px 19px;
+			}
 		}
 	}
 	// .product__row
@@ -180,6 +257,9 @@ $md4: 425px;
 		align-items: center;
 		margin: 0 0 25px;
 		color: $black;
+		&:last-child {
+			margin: 0;
+		}
 	}
 	&__attr {
 		display: flex;
@@ -193,32 +273,58 @@ $md4: 425px;
 			margin: 0;
 		}
 		&:before {
+			content: "";
+			background-size: contain;
 			margin: 0px 15px 0px 0px;
 			width: 18px;
 			height: 18px;
+			@media (max-width: $md4) {
+				background-size: contain;
+				width: 14px;
+				margin: 0px 9px 0px 0px;
+			}
+		}
+		@media (max-width: $md4) {
+			font-size: 12px;
+			margin: 0 20px 0 0;
 		}
 	}
 	// .product__internalArea
 	&__internalArea {
 		&:before {
-			content: url("../../img/icons/internalArea.png");
+			background: url("../../img/icons/internalArea.png") center no-repeat;
 		}
 	}
 	// .product__totalArea
 	&__totalArea {
 		&:before {
-			content: url("../../img/icons/totalArea.png");
+			background: url("../../img/icons/totalArea.png") center no-repeat;
 		}
 	}
 	// .product__finish
 	&__finish {
 		&:before {
-			content: url("../../img/icons/finish.png");
+			background: url("../../img/icons/finish.png") center no-repeat;
 		}
 	}
 	// .product__price
 	&__price {
+		justify-content: space-between;
+		.product__like {
+			@media (min-width: $md4) {
+				display: none;
+			}
+			@media (max-width: $md4) {
+				display: block;
+			}
+		}
+	}
+	// .product__value
+	&__value {
 		font-size: 30px;
 		font-weight: 700;
+		@media (max-width: $md4) {
+			font-size: 20px;
+		}
 	}
 }

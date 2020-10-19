@@ -1,0 +1,22 @@
+@mixin adaptFontSize($maxFont, $minFont, $maxLHeight, $minLHeight) {
+	font-size: calc(
+		#{$maxFont}px - (#{$maxWidthContainer}px - 100vw) *
+			((#{$maxFont} - #{$minFont}) / (#{$maxWidthContainer} - #{$minWidth}))
+	);
+	line-height: calc(
+		#{$maxLHeight}px - (#{$maxWidthContainer}px - 100vw) *
+			((#{$maxLHeight} - #{$minLHeight}) / (#{$maxWidthContainer} - #{$minWidth}))
+	);
+}
+@mixin adaptMargin($maxMargin, $minMargin) {
+	margin-bottom: calc(
+		#{$maxMargin}px - (#{$maxWidthContainer}px - 100vw) *
+			((#{$maxMargin} - #{$minMargin}) / (#{$maxWidthContainer} - #{$minWidth}))
+	);
+}
+// @mixin adaptSize($feature, $maxSize, $minSize) {
+// 	$feature: calc(
+// 		#{$maxSize}px - (#{$maxWidthContainer}px - 100vw) *
+// 			((#{$maxSize} - #{$minSize}) / (#{$maxWidthContainer} - #{$minWidth}))
+// 	);
+// }
