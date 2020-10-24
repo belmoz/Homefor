@@ -54,12 +54,12 @@
 		<section class="section-filter filter">
 			<div class="filter__container container">
 				<div class="filter__row">
-					<select class="filter__select" name="obj-type" id="">
+					<select class="filter__select" name="typeobj" id="typeobj">
 						<option disabled>Тип объекта</option>
-						<option class="filter__houses" value="houses">Загородные дома</option>
-						<option class="filter__flats" value="flats">Городские квартиры</option>
+						<option value="houses">Загородные дома</option>
+						<option value="flats">Городские квартиры</option>
 					</select>
-					<select class="filter__select" name="area" id="">
+					<select class="filter__select" name="district" id="district">
 						<option disabled>Район</option>
 						<option value="malinovka">Малиновка</option>
 						<option value="frunzenskiy">Фрунзенский</option>
@@ -71,7 +71,7 @@
 						<div class="filter__item">
 							<div class="filter__box">Площадь</div>
 							<div class="filter__box">
-								<input class="filter__input" required="true" type="text" name="area">
+								<input class="filter__input filter__input_area" required="true" type="text" name="area">
 								<label class="filter__label" for="area">м2</label>
 							</div>
 						</div>
@@ -88,7 +88,7 @@
 						<div class="filter__item">
 							<div class="filter__box">Цена за м2</div>
 							<div class="filter__box">
-								<input id="filter__input" class="filter__input" required="true" type="text" name="m2">
+								<input id="filter__input" class="filter__input filter__input_price" required="true" type="text" name="m2">
 								<label class="filter__label" for="m2">тыс.</label>
 							</div>
 						</div>
@@ -110,7 +110,7 @@
 				<!-- @@include("../blocks/modules/catalog/catalog.html") -->
 			</div>
 		</section>
-		<section class="section-houses houses">
+		<section id="houses" class="section-houses houses">
 			<div class="houses__container container">
 				<div class="houses__header title-header">
 					<h2 class="title-header__title">Загородные дома</h2>
@@ -312,13 +312,201 @@
 				</div>
 			</div>
 		</section>
-		<section class="section-flats flats">
+		<section id="flats" class="section-flats flats">
 			<div class="flats__container container">
 				<div class="flats__header title-header">
 					<h2 class="title-header__title">Городские квартиры</h2>
 					<div class="title-header__description">В каталоге квартир вы найдете актуальные планировки и цены. Это те квартиры, которые есть в продаже сейчас.</div>
 				</div>
 				<div class="flats-slider">
+					<!-- product 04 -->
+					<a href="" class="catalog__product product">
+						<div class="product__column">
+							<div class="product__bg">
+								<img src="../img/catalog/f-01.jpg" alt="">
+							</div>
+							<div class="product__item product__item_top">
+								<div class="product__text">
+									<div class="product__title">Дом “Жуковка”</div>
+									<div class="product__description">ул. Карла Маркса, 60, Екатеринбург</div>
+								</div>
+								<div class="product__like"></div>
+							</div>
+						</div>
+						<div class="product__column">
+							<div class="product__item product__item_bottom">
+								<div class="product__text">
+									<div class="product__title">Дом “Жуковка”</div>
+									<div class="product__description">ул. Карла Маркса, 60, Екатеринбург</div>
+								</div>
+								<div class="product__row">
+									<div class="product__attr product__internalArea">72м2</div>
+									<div class="product__attr product__finish">с отделкой</div>
+								</div>
+								<div class="product__row product__price">
+									<div class="product__value">3 006 435 500<span>₽</span></div>
+									<div class="product__like"></div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<!-- product 05 -->
+					<a href="" class="catalog__product product">
+						<div class="product__column">
+							<div class="product__bg">
+								<img src="../img/catalog/f-02.jpg" alt="">
+							</div>
+							<div class="product__item product__item_top">
+								<div class="product__text">
+									<div class="product__title">Дом “Парашют”</div>
+									<div class="product__description">ул. Зорге, 160, Екатеринбург</div>
+								</div>
+								<div class="product__like"></div>
+							</div>
+						</div>
+						<div class="product__column">
+							<div class="product__item product__item_bottom">
+								<div class="product__text">
+									<div class="product__title">Дом “Парашют”</div>
+									<div class="product__description">ул. Зорге, 160, Екатеринбург</div>
+								</div>
+								<div class="product__row">
+									<div class="product__attr product__internalArea">112 м2</div>
+									<div class="product__attr product__finish">с отделкой</div>
+								</div>
+								<div class="product__row product__price">
+									<div class="product__value">5 000 974 500<span>₽</span></div>
+									<div class="product__like"></div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<!-- product 06 -->
+					<a href="" class="catalog__product product">
+						<div class="product__column">
+							<div class="product__bg">
+								<img src="../img/catalog/f-03.jpg" alt="">
+							</div>
+							<div class="product__item product__item_top">
+								<div class="product__text">
+									<div class="product__title">Дом “Весна”</div>
+									<div class="product__description">ул. Заречная, 120, Екатеринбург</div>
+								</div>
+								<div class="product__like"></div>
+							</div>
+						</div>
+						<div class="product__column">
+							<div class="product__item product__item_bottom">
+								<div class="product__text">
+									<div class="product__title">Дом “Весна”</div>
+									<div class="product__description">ул. Заречная, 120, Екатеринбург</div>
+								</div>
+								<div class="product__row">
+									<div class="product__attr product__internalArea">100 м2</div>
+									<div class="product__attr product__finish">с отделкой</div>
+								</div>
+								<div class="product__row product__price">
+									<div class="product__value">6 120 412 500<span>₽</span></div>
+									<div class="product__like"></div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<!-- product 07 -->
+					<a href="" class="catalog__product product">
+						<div class="product__column">
+							<div class="product__bg">
+								<img src="../img/catalog/f-04.jpg" alt="">
+							</div>
+							<div class="product__item product__item_top">
+								<div class="product__text">
+									<div class="product__title">Дом “Пионер”</div>
+									<div class="product__description">ул. Карла Маркса, 120, Екатеринбург</div>
+								</div>
+								<div class="product__like"></div>
+							</div>
+						</div>
+						<div class="product__column">
+							<div class="product__item product__item_bottom">
+								<div class="product__text">
+									<div class="product__title">Дом “Пионер”</div>
+									<div class="product__description">ул. Карла Маркса, 120, Екатеринбург</div>
+								</div>
+								<div class="product__row">
+									<div class="product__attr product__internalArea">90 м2</div>
+									<div class="product__attr product__finish">с отделкой</div>
+								</div>
+								<div class="product__row product__price">
+									<div class="product__value">3 120 000 500<span>₽</span></div>
+									<div class="product__like"></div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<!-- product 08 -->
+					<a href="" class="catalog__product product">
+						<div class="product__column">
+							<div class="product__bg">
+								<img src="../img/catalog/f-05.jpg" alt="">
+							</div>
+							<div class="product__item product__item_top">
+								<div class="product__text">
+									<div class="product__title">Дом “Манхетен”</div>
+									<div class="product__description">ул. Московская, 10, Екатеринбург</div>
+								</div>
+								<div class="product__like"></div>
+							</div>
+						</div>
+						<div class="product__column">
+							<div class="product__item product__item_bottom">
+								<div class="product__text">
+									<div class="product__title">Дом “Манхетен”</div>
+									<div class="product__description">ул. Московская, 10, Екатеринбург</div>
+								</div>
+								<div class="product__row">
+									<div class="product__attr product__internalArea">87 м2</div>
+									<div class="product__attr product__finish">с отделкой</div>
+								</div>
+								<div class="product__row product__price">
+									<div class="product__value">6 000 456 000<span>₽</span></div>
+									<div class="product__like"></div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<!-- product 09 -->
+					<a href="" class="catalog__product product">
+						<div class="product__column">
+							<div class="product__bg">
+								<img src="../img/catalog/f-06.jpg" alt="">
+							</div>
+							<div class="product__item product__item_top">
+								<div class="product__text">
+									<div class="product__title">Дом “Дружба”</div>
+									<div class="product__description">ул. Прашина, 60, Екатеринбург</div>
+								</div>
+								<div class="product__like"></div>
+							</div>
+						</div>
+						<div class="product__column">
+							<div class="product__item product__item_bottom">
+								<div class="product__text">
+									<div class="product__title">Дом “Дружба”</div>
+									<div class="product__description">ул. Прашина, 60, Екатеринбург</div>
+								</div>
+								<div class="product__row">
+									<div class="product__attr product__internalArea">50 м2</div>
+									<div class="product__attr product__finish">с отделкой</div>
+								</div>
+								<div class="product__row product__price">
+									<div class="product__value">4 012 400 500<span>₽</span></div>
+									<div class="product__like"></div>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="flats-slider flats-slider-unvisible">
 					<!-- product 04 -->
 					<a href="" class="catalog__product product">
 						<div class="product__column">
@@ -536,7 +724,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="section-about about">
+		<section id="about" class="section-about about">
 			<div class="about__container container">
 				<div class="about__header title-header">
 					<h2 class="title-header__title">О компании</h2>
@@ -564,7 +752,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="section-news news">
+		<section id="news" class="section-news news">
 			<div class="news__container container">
 				<div class="news__header title-header">
 					<h2 class="title-header__title">Наши новости</h2>
@@ -634,9 +822,36 @@
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="https://github.com/furf/jquery-ui-touch-punch/blob/master/jquery.ui.touch-punch.min.js"></script>
+	<script type="text/javascript" src="//github.com/furf/jquery-ui-touch-punch/blob/master/jquery.ui.touch-punch.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<script>
+		// вкл/выкл/фикс меню ===================================
+		$(".icon-menu").on("click", function (e) {
+			// $(this).toggleClass('icon-menu_active');
+			// $('.menu__body').toggleClass('menu__body_active');
+			$(this).toggleClass('');
+			$('.menu__body').toggleClass('');
+			$('body').toggleClass('lock');
+		})
+		// переход по меню ===================================
+		$("a.menu__link").on("click", function (e) {
+			e.preventDefault();
+			var anchor = $(this).attr('href');
+			$('html, body').stop().animate({
+				scrollTop: $(anchor).offset().top - 30
+			}, 800);
+			$('.menu__body').removeClass('menu__body_active');
+			$('body').removeClass('lock');
+		});
+		$("a.menu-footer__link").on("click", function (e) {
+			e.preventDefault();
+			var anchor = $(this).attr('href');
+			$('html, body').stop().animate({
+				scrollTop: $(anchor).offset().top - 30
+			}, 800);
+		});
+		// слайдеры ===================================
 		$(document).ready(function () {
 			$('.main-slider').slick({
 				dots: true,
@@ -709,7 +924,8 @@
 				]
 			});
 		});
-
+		// фильтр ===================================
+		// список
 		$('.filter__select').each(function () {
 			const _this = $(this),
 				selectOption = _this.find('option'),
@@ -767,13 +983,13 @@
 
 		$(document).on('click', function (e) {
 			if (!$(e.target).closest(".filter__select").length) {
-				$('.new-select__list').fadeOut();
+				$('.new-select__list').slideUp();
 				$('.new-select').removeClass('on');
 			}
 			e.stopPropagation();
 		});
 
-		// ползунок ===================================
+		// ползунок
 		$(".filter-slider-01__item").slider({
 			min: 0,
 			max: 1000,
@@ -782,6 +998,7 @@
 			animate: "fast",
 			slide: function (event, ui) {
 				$(".filter-slider-01__item span").html(ui.value);
+				$(".filter__input_area").val(ui.value);
 			}
 		});
 		$(".filter-slider-01__item span").html($(".filter-slider-01__item").slider("value"));
@@ -793,31 +1010,78 @@
 			animate: "fast",
 			slide: function (event, ui) {
 				$(".filter-slider-02__item span").html(ui.value);
+				$(".filter__input_price").val(ui.value);
 			}
 		});
 		$(".filter-slider-02__item span").html($(".filter-slider-02__item").slider("value"));
 		$(document).delegate('.ui-page', 'touchmove', false);
-
+		// колонка
 		$('.filter__column').on('click', function (e) {
-			$(this).children('.filter__item').children('.filter__box').children('.filter__input').focus();
+			$(this).find('.filter__input').focus();
 		});
-
+		// сброс фильтра
 		$('.filter__btn_reset').on('click', function (e) {
 			// $('.filter__input').val('');
 			// $('.ui-slider-handle').attr('style', 'left:50%');
 			location.reload('.filter__container');
 		});
-
+		// только ввод чисел
 		$(document).ready(function () {
-			if (!$.browser.webkit) {
-				$('.wrapper').html('<p>Sorry! Non webkit users. :(</p>');
-			}
+			$('.filter__input').bind("change keyup input click", function () {
+				if (this.value.match(/[^0-9]/g)) {
+					this.value = this.value.replace(/[^0-9]/g, '');
+				}
+			});
+		});
+		// показать ещё
+		$('.flats-slider-unvisible').hide();
+		$('.flats__more').click(function () {
+			$(this).toggleClass('flats__more_active');
+			$('.flats-slider-unvisible').slideToggle(300, function () {
+				if ($(this).is(':hidden')) {
+					$('.flats__more').html('Показать ещё');
+				} else {
+					$('.flats__more').html('Скрыть');
+				}
+			});
+			return false;
 		});
 
+		// табы ====================================
 		$('ul.genplan__tabs').on('click', 'li:not(.tabs-genplan__tab_active)', function () {
 			$(this)
 				.addClass('tabs-genplan__tab_active').siblings().removeClass('tabs-genplan__tab_active')
 				.closest('section.genplan').find('div.houses-genplan').removeClass('houses-genplan_active').eq($(this).index()).addClass('houses-genplan_active');
+		});
+		// footer ===================================
+		// валидация формы
+		$('#form-footer').validate({
+			rules: {
+				email: {
+					required: true,
+					email: true,
+				},
+			},
+			messages: {
+				email: {
+					required: "Поле 'Email' обязательно к заполнению",
+					email: "Не корректное имя",
+				}
+			},
+			submitHandler: function (form) {
+				form.submit();
+			}
+		});
+
+		$('.filter__btn_show').on('click', function (e) {
+			var type_value = $("#typeobj").val();
+			var district_value = $("#district").val();
+			var area_value = $(".filter__input_area").val();
+			var price_value = $(".filter__input_price").val();
+			console.log(type_value);
+			console.log(district_value);
+			console.log(area_value);
+			console.log(price_value);
 		});
 	</script>
 	<script src="js/main.js"></script>

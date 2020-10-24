@@ -51,6 +51,9 @@
         @media (max-width: $md4) {
             font-size: 18px;
         }
+        &:hover {
+            color: $hover;
+        }
     }
     // .footer__subscribe
     &__subscribe {
@@ -187,6 +190,7 @@
         color: $black;
         font-size: 16px;
         white-space: nowrap;
+        transition: all 0.3s ease 0s;
         @media (max-width: 560px) {
             font-size: 14px;
         }
@@ -201,6 +205,7 @@
 .form-footer {
     display: flex;
     flex: 0 1 100%;
+    position: relative;
     max-width: 760px;
     @media (max-width: $md2) {
         flex-direction: column;
@@ -211,7 +216,6 @@
     }
     // .form-footer__item
     &__item {
-        width: 100%;
     }
     // .form-footer__email
     &__email {
@@ -243,6 +247,7 @@
     &__btn {
         width: 220px;
         height: 60px;
+        border: 1px solid $black;
         background-color: $black;
         color: $white;
         font-size: 18px;
@@ -250,7 +255,6 @@
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 3.24px;
-        border: 1px solid $black;
         @media (max-width: $md2) {
             width: auto;
         }
@@ -261,8 +265,24 @@
             letter-spacing: 2.52px;
         }
         &:hover {
+            border: 1px solid $hover;
             background-color: $hover;
         }
+    }
+    // .form-footer__label
+}
+label.error {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #f50c0d;
+    font-size: 12px;
+}
+input.error {
+    margin: 0 0 20px 0;
+    border: 1px solid #f50c0d;
+    &:focus {
+        border: 1px solid #f50c0d;
     }
 }
 .social-footer {
@@ -271,18 +291,22 @@
     @media (max-width: $md2) {
         margin: 0;
     }
-    // .social-footer__social
-    &__social {
+    // .social-footer__link
+    &__link {
         position: relative;
         background-color: $black;
         width: 50px;
         height: 50px;
         border-radius: 50%;
         margin-left: 30px;
+        transition: all 0.3s ease 0s;
         @media (max-width: $md2) {
             &:first-child {
                 margin-left: 0;
             }
+        }
+        &:hover {
+            background-color: $hover;
         }
         &:after {
             content: "";
