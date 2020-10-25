@@ -1,5 +1,19 @@
 .catalog {
     display: none;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    @media (max-width: $md4) {
+        margin: 0 -10px;
+    }
+    .product {
+        flex: 1 1 calc(100% / 3 - 20px);
+        @media (max-width: $md2) {
+            flex: 1 1 calc(100% / 2 - 20px);
+        }
+        @media (max-width: 650px) {
+            flex: 1 1 calc(100% / 1 - 20px);
+        }
+    }
     // .catalog__product
     &__product {
     }
